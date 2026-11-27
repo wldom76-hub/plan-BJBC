@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2027 목회 계획</title>
+<style>
+:root{--bg:#f6f5f1;--sf:#fff;--tx:#1f2430;--mu:#6a7080;--bd:#e2e0d8;--ac:#2f5d9e;--ok:#2a9d6f;--wn:#fff4d6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181d;--sf:#20232b;--tx:#e8e9ee;--mu:#9aa0ae;--bd:#333845;--ac:#7aa7e8;--ok:#4cc79a;--wn:#3a3320;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#16181d;--sf:#20232b;--tx:#e8e9ee;--mu:#9aa0ae;--bd:#333845;--ac:#7aa7e8;--ok:#4cc79a;--wn:#3a3320;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 -apple-system,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif}
+.w{max-width:1080px;margin:0 auto;padding:14px}
+h1{font-size:20px;margin:0}.sub{color:var(--mu);font-size:13px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:10px}
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+button,select,input,textarea{font:inherit;color:var(--tx)}
+.b{background:var(--sf);border:1px solid var(--bd);border-radius:8px;padding:6px 12px;cursor:pointer}
+.b.on,.b.p{background:var(--ac);color:#fff;border-color:var(--ac)}
+.b:disabled{opacity:.5}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:12px;margin-bottom:12px}
+.alert{background:var(--wn);border-color:#e4c766}
+.pg{height:8px;background:var(--bd);border-radius:6px;overflow:hidden}.pg i{display:block;height:100%;background:var(--ok)}
+.yr{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.mm{border:1px solid var(--bd);border-radius:10px;padding:8px;cursor:pointer;background:var(--sf)}
+.mm.sel{outline:2px solid var(--ac)}
+.mm h4{margin:0 0 4px;font-size:14px;display:flex;justify-content:space-between}
+.mg{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;font-size:10px;text-align:center}
+.mg span{padding:1px 0;border-radius:4px}.mg .has{background:var(--ac);color:#fff}.mg .all{background:var(--ok);color:#fff}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.dh{text-align:center;color:var(--mu);font-size:12px}
+.dc{min-height:92px;background:var(--sf);border:1px solid var(--bd);border-radius:8px;padding:4px;cursor:pointer;overflow:hidden}
+.dc.o{opacity:.35}.dc.t{border-color:var(--ac);border-width:2px}
+.dn{font-size:12px;color:var(--mu)}.dn.su{color:#d04a4a}
+.chip{display:block;width:100%;text-align:left;border:0;border-left:3px solid var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);border-radius:4px;padding:1px 4px;margin-top:2px;font-size:11px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chip.d{text-decoration:line-through;opacity:.6}
+.wk{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:8px}
+.it{display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-top:1px solid var(--bd)}
+.it:first-of-type{border-top:0}
+.ck{width:22px;height:22px;flex:none;border:2px solid var(--bd);border-radius:6px;background:var(--sf);cursor:pointer;display:grid;place-items:center;font-size:14px;color:#fff;padding:0}
+.ck.on{background:var(--ok);border-color:var(--ok)}
+.it .t{flex:1;min-width:0;cursor:pointer}.it.d .t b{text-decoration:line-through;color:var(--mu)}
+.tag{font-size:11px;color:#fff;border-radius:10px;padding:0 7px;background:var(--c)}
+.dn2{font-size:11px;color:var(--ok);font-weight:600}
+.mo{position:fixed;inset:0;background:#0008;display:none;align-items:center;justify-content:center;padding:14px;z-index:20}
+.mo.on{display:flex}.md{background:var(--sf);border-radius:14px;padding:16px;width:100%;max-width:420px;max-height:92%;overflow:auto}
+.md label{display:block;font-size:12px;color:var(--mu);margin-top:8px}
+.md input,.md select,.md textarea{width:100%;padding:7px;border:1px solid var(--bd);border-radius:8px;background:var(--bg)}
+.sec{font-size:13px;color:var(--mu);margin:2px 0 6px}
+.sw{width:28px;height:28px;border-radius:50%;border:2px solid transparent;cursor:pointer;color:#fff;font-size:11px;padding:0}.sw.on{border-color:var(--tx);box-shadow:0 0 0 2px var(--sf) inset}
+textarea.ta{font:12px/1.4 monospace;min-height:120px}
+@media(max-width:640px){.dc{min-height:70px}.chip{font-size:10px}}
+</style></head><body><div class="w">
+<div class="bar"><div><h1>⛪ 2027 목회 계획</h1><div class="sub" id="st">불러오는 중…</div></div>
+<div class="row"><button class="b p" id="add">＋ 일정 추가</button><button class="b" id="nt">🔔 알림 켜기</button><button class="b" id="ics">📅 캘린더 내보내기</button></div></div>
+<div id="al"></div>
+<div class="card"><div class="row" style="justify-content:space-between"><div class="row" id="tabs"></div><div class="row" id="nav"></div></div>
+<div class="sub" style="margin:8px 0 4px" id="ps"></div><div class="pg"><i id="pb" style="width:0"></i></div></div>
+<div id="v"></div>
+<div class="sub" id="ft" style="margin:8px 0 24px"></div></div>
+<div class="mo" id="mo"><div class="md" id="md"></div></div>
+<script>
+let Y=2027;const CATS={'예배':'#3b6fd4','심방':'#2a9d6f','교육':'#c27c0e','행사':'#c2410c','회의':'#7c5cc4','기타':'#6b7280'};
+const RM=[['-1','알림 없음'],['0','정시'],['10','10분 전'],['30','30분 전'],['60','1시간 전'],['1440','1일 전']];
+const DW=['일','월','화','수','목','금','토'];
+const S={ev:[],view:'year',m:0,wk:null,db:null,owner:false,load:true,names:{},uid:null,user:null,pops:[]};
+const colorOf=e=>e.color||CATS[e.cat]||CATS['기타'];
+const nm=id=>S.names[id]||'…';
+async function resolveNames(){const ids=[...new Set(S.ev.flatMap(e=>[e.by,e.doneBy]).filter(Boolean))].filter(i=>!(i in S.names));if(!ids.length||!S.user)return;try{const ps=await S.user.profiles(ids);ids.forEach(i=>{S.names[i]=(ps[i]&&ps[i].name)||'구성원'});render()}catch(x){ids.forEach(i=>{S.names[i]='구성원'});render()}}
+const $=s=>document.querySelector(s);
+function el(t,a,...k){const e=document.createElement(t);for(const x in a||{}){if(x==='class')e.className=a[x];else if(x.startsWith('on'))e.addEventListener(x.slice(2),a[x]);else if(x==='style')e.style.cssText=a[x];else e.setAttribute(x,a[x])}for(const c of k.flat())if(c!=null&&c!==false)e.append(c.nodeType?c:document.createTextNode(c));return e}
+const p2=n=>String(n).padStart(2,'0');
+const ymd=d=>d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate());
+const pd=s=>{const[a,b,c]=s.split('-').map(Number);return new Date(a,b-1,c)};
+const today=ymd(new Date());
+{const t=new Date();S.m=t.getFullYear()===Y?t.getMonth():0;const b=t.getFullYear()===Y?t:new Date(Y,0,1);S.wk=addD(b,-b.getDay())}
+function addD(d,n){const r=new Date(d);r.setDate(r.getDate()+n);return r}
+function sorted(a){return a.slice().sort((x,y)=>(x.date+(x.time||'')).localeCompare(y.date+(y.time||'')))}
+function on(date){return S.ev.filter(e=>e.date===date).sort((a,b)=>(a.time||'').localeCompare(b.time||''))}
+function stat(list){const d=list.filter(e=>e.done).length;return{d,n:list.length,p:list.length?Math.round(d/list.length*100):0}}
+function monthEv(m){return S.ev.filter(e=>e.date.startsWith(Y+'-'+p2(m+1)))}
+
+async function setDone(e){try{await S.db.collection('events').doc(e.id).update({done:!e.done,doneAt:e.done?'':today,doneBy:e.done?'':(S.uid||'')})}catch(x){toast('저장하지 못했습니다. 권한을 확인해 주세요.')}}
+function toast(m){$('#st').textContent=m}
+
+function item(e){
+ const c=colorOf(e);
+ return el('div',{class:'it'+(e.done?' d':''),style:'--c:'+c},
+  el('button',{class:'ck'+(e.done?' on':''),title:'완료 체크',onclick:()=>setDone(e)},e.done?'✓':''),
+  el('div',{class:'t',onclick:()=>edit(e)},
+   el('div',{},el('b',{},e.title),' ',el('span',{class:'tag'},e.cat||'기타')),
+   el('div',{class:'sub'},e.date.slice(5).replace('-','/')+' ('+DW[pd(e.date).getDay()]+')'+(e.time?' '+e.time:'')+(e.memo?' · '+e.memo:'')),
+   e.by?el('div',{class:'sub'},'✍ 등록: '+nm(e.by)):null,
+   e.done?el('div',{class:'dn2'},'✓ 완료'+(e.doneAt?' ('+e.doneAt.slice(5).replace('-','/')+')':'')+(e.doneBy?' · '+nm(e.doneBy):'')):null))}
+function chip(e){const c=colorOf(e);
+ return el('button',{class:'chip'+(e.done?' d':''),title:e.by?'등록: '+nm(e.by):'',style:'--c:'+c,onclick:ev=>{ev.stopPropagation();edit(e)}},(e.done?'✓ ':'')+(e.time?e.time+' ':'')+e.title)}
+
+function monthGrid(m){
+ const first=new Date(Y,m,1),last=new Date(Y,m+1,0).getDate(),box=el('div',{class:'cal'});
+ DW.forEach(d=>box.append(el('div',{class:'dh'},d)));
+ for(let i=0;i<first.getDay();i++)box.append(el('div'));
+ for(let d=1;d<=last;d++){const k=Y+'-'+p2(m+1)+'-'+p2(d),dt=new Date(Y,m,d),es=on(k);
+  box.append(el('div',{class:'dc'+(k===today?' t':''),onclick:()=>edit(null,k)},
+   el('div',{class:'dn'+(dt.getDay()===0?' su':'')},d),es.slice(0,3).map(chip),es.length>3?el('div',{class:'sub'},'+'+(es.length-3)+'건'):null))}
+ return box}
+
+function agenda(list,title){
+ const c=el('div',{class:'card'},el('div',{class:'sec'},title));
+ if(!list.length)c.append(el('div',{class:'sub'},'일정이 없습니다. ＋ 일정 추가를 눌러 보세요.'));
+ sorted(list).forEach(e=>c.append(item(e)));return c}
+
+function render(){
+ const v=$('#v');v.textContent='';document.querySelector('h1').textContent='⛪ '+Y+' 목회 계획';document.title=Y+' 목회 계획';
+ const T=[['year','연간 + 월간'],['month','월간'],['week','주간']];
+ $('#tabs').textContent='';T.forEach(([k,n])=>$('#tabs').append(el('button',{class:'b'+(S.view===k?' on':''),onclick:()=>{S.view=k;render()}},n)));
+ $('#tabs').append(el('select',{class:'b',title:'연도',onchange:ev=>{Y=+ev.target.value;const t=new Date();S.m=t.getFullYear()===Y?t.getMonth():0;const b=t.getFullYear()===Y?t:new Date(Y,0,1);S.wk=addD(b,-b.getDay());render()}},[2026,2027,2028].map(y=>el('option',y===Y?{value:y,selected:'selected'}:{value:y},y+'년'))));
+ const nav=$('#nav');nav.textContent='';
+ const mv=n=>()=>{S.m=Math.min(11,Math.max(0,S.m+n));render()};
+ const wv=n=>()=>{const w=addD(S.wk,n*7);S.wk=w;if(w.getFullYear()===Y)S.m=w.getMonth();render()};
+ if(S.view!=='week')nav.append(el('button',{class:'b',onclick:mv(-1)},'◀'),el('b',{},Y+'년 '+(S.m+1)+'월'),el('button',{class:'b',onclick:mv(1)},'▶'));
+ else{const e=addD(S.wk,6);nav.append(el('button',{class:'b',onclick:wv(-1)},'◀'),el('b',{},ymd(S.wk).slice(5)+' ~ '+ymd(e).slice(5)),el('button',{class:'b',onclick:wv(1)},'▶'),el('button',{class:'b',onclick:()=>{const t=new Date();S.wk=addD(t,-t.getDay());render()}},'이번 주'))}
+ const scope=S.view==='week'?S.ev.filter(e=>e.date>=ymd(S.wk)&&e.date<=ymd(addD(S.wk,6))):S.view==='month'?monthEv(S.m):S.ev.filter(e=>e.date.startsWith(String(Y)));
+ const s=stat(scope);
+ $('#ps').textContent=(S.view==='year'?Y+'년 전체':S.view==='month'?(S.m+1)+'월':'이번 주')+' 진행률 '+s.p+'% ('+s.d+'/'+s.n+'건 완료)';$('#pb').style.width=s.p+'%';
+ if(S.view==='year'){
+  const g=el('div',{class:'yr'});
+  for(let m=0;m<12;m++){const es=monthEv(m),st=stat(es),f=new Date(Y,m,1).getDay(),ld=new Date(Y,m+1,0).getDate(),mg=el('div',{class:'mg'});
+   for(let i=0;i<f;i++)mg.append(el('span'));
+   for(let d=1;d<=ld;d++){const k=Y+'-'+p2(m+1)+'-'+p2(d),x=on(k);mg.append(el('span',{class:x.length?(x.every(e=>e.done)?'all':'has'):''},d))}
+   g.append(el('div',{class:'mm'+(m===S.m?' sel':''),onclick:()=>{S.m=m;render()}},el('h4',{},el('span',{},(m+1)+'월'),el('span',{class:'sub'},es.length?st.d+'/'+st.n+' · '+st.p+'%':'—')),mg))}
+  v.append(el('div',{class:'card'},g),el('div',{class:'card'},el('div',{class:'sec'},(S.m+1)+'월 달력'),monthGrid(S.m)),agenda(monthEv(S.m),(S.m+1)+'월 일정 목록'))
+ }else if(S.view==='month'){v.append(el('div',{class:'card'},monthGrid(S.m)),agenda(monthEv(S.m),(S.m+1)+'월 일정 목록'))}
+ else{const g=el('div',{class:'wk'});
+  for(let i=0;i<7;i++){const d=addD(S.wk,i),k=ymd(d),es=on(k),c=el('div',{class:'card',style:'margin:0'+(k===today?';border-color:var(--ac);border-width:2px':'')},
+   el('div',{class:'sec'},(d.getMonth()+1)+'/'+d.getDate()+' ('+DW[d.getDay()]+')'),es.map(item),el('button',{class:'b',style:'width:100%;margin-top:6px',onclick:()=>edit(null,k)},'＋'));g.append(c)}
+  v.append(g)}
+ alerts();
+ $('#st').textContent=S.load?'불러오는 중…':'모든 사람이 일정을 추가·수정·체크할 수 있고, 삭제는 담당자만 가능합니다.';
+ $('#ft').textContent=S.owner?'👑 담당자 모드: 일정 삭제와 기본 절기 입력이 가능합니다.':'일정 삭제는 담당 목회자만 할 수 있습니다.';
+ if(S.owner&&!S.load&&!S.ev.length)$('#ft').append(' ',el('button',{class:'b',onclick:seed},'2027 기본 절기 일정 넣기'));
+}
+function alerts(){
+ const t2=ymd(addD(new Date(),1)),l=S.ev.filter(e=>!e.done&&(e.date===today||e.date===t2)),a=$('#al');a.textContent='';
+ S.pops.forEach(id=>{const e=S.ev.find(x=>x.id===id);if(e)a.append(el('div',{class:'card alert'},el('b',{},'🔔 곧 시작: '+e.title+(e.time?' '+e.time:'')),' ',el('button',{class:'b',onclick:()=>{S.pops=S.pops.filter(x=>x!==id);render()}},'닫기')))});
+ if(!l.length)return;
+ const c=el('div',{class:'card alert'},el('div',{class:'sec'},'⏰ 오늘·내일 남은 일정 '+l.length+'건'));
+ sorted(l).forEach(e=>c.append(item(e)));a.append(c)}
+
+function edit(e,date){
+ const md=$('#md'),isNew=!e;e=e||{title:'',date:date||today,time:'',cat:'예배',memo:'',remind:'-1'};
+ md.textContent='';
+ const f={t:el('input',{value:e.title,placeholder:'예: 주일 대예배'}),d:el('input',{type:'date',value:e.date,min:Y+'-01-01',max:Y+'-12-31'}),tm:el('input',{type:'time',value:e.time||''}),
+  c:el('select',{},Object.keys(CATS).map(k=>el('option',{value:k},k))),r:el('select',{},RM.map(([v,n])=>el('option',{value:v},n))),m:el('textarea',{rows:3,placeholder:'메모(선택)'})};
+ f.c.value=e.cat||'예배';f.r.value=String(e.remind??'-1');f.m.value=e.memo||'';
+ const er=el('div',{class:'sub',style:'color:#d04a4a;margin-top:8px'});
+ let col=e.color||'';const COLS=['','#3b6fd4','#2a9d6f','#c27c0e','#c2410c','#7c5cc4','#d6336c','#0ea5b7','#6b7280'];
+ const pal=el('div',{class:'row'});
+ const drawPal=()=>{pal.textContent='';COLS.forEach(c=>pal.append(el('button',{class:'sw'+(c===col?' on':''),title:c||'분류 기본색',style:'background:'+(c||CATS[f.c.value]||'#999'),onclick:()=>{col=c;drawPal()}},c?'':'기본')))};drawPal();f.c.addEventListener('change',drawPal);
+ md.append(el('h3',{style:'margin:0'},isNew?'일정 추가':'일정 수정'),e.by?el('div',{class:'sub'},'✍ 등록: '+nm(e.by)):null,el('label',{},'제목'),f.t,el('label',{},'날짜'),f.d,el('label',{},'시간(비우면 종일)'),f.tm,el('label',{},'분류'),f.c,el('label',{},'색상 (캘린더에 표시되는 색)'),pal,el('label',{},'알림'),f.r,el('label',{},'메모'),f.m,er);
+ const rw=el('div',{class:'row',style:'margin-top:12px;justify-content:space-between'});
+ const L=el('div',{class:'row'}),R=el('div',{class:'row'});
+ if(!isNew&&S.owner)L.append(el('button',{class:'b',style:'color:#d04a4a',onclick:async(ev)=>{const b=ev.currentTarget;if(!b.dataset.s){b.dataset.s=1;b.textContent='한 번 더 누르면 삭제';return}try{await S.db.collection('events').doc(e.id).delete();close()}catch(x){er.textContent='삭제하지 못했습니다.'}}},'삭제'));
+ R.append(el('button',{class:'b',onclick:close},'취소'),el('button',{class:'b p',onclick:async()=>{
+  if(!f.t.value.trim()||!f.d.value){er.textContent='제목과 날짜를 입력해 주세요.';return}
+  const data={title:f.t.value.trim(),date:f.d.value,time:f.tm.value,cat:f.c.value,remind:f.r.value,memo:f.m.value.trim(),color:col};
+  try{if(isNew)await S.db.collection('events').add({...data,by:S.uid||'',done:false,doneAt:''});else await S.db.collection('events').doc(e.id).update(data);close()}catch(x){er.textContent='저장하지 못했습니다. 로그인·권한을 확인해 주세요.'}}},'저장'));
+ rw.append(L,R);md.append(rw);$('#mo').classList.add('on');f.t.focus()}
+function close(){$('#mo').classList.remove('on')}
+$('#mo').addEventListener('click',e=>{if(e.target.id==='mo')close()});
+$('#add').onclick=()=>edit(null,S.view==='week'?ymd(S.wk):(today.startsWith(String(Y))?today:Y+'-'+p2(S.m+1)+'-01'));
+
+async function seed(){
+ const L=[['01-01','신년 새해 기도회','예배'],['01-03','신년 첫 주일 예배','예배'],['02-10','재의 수요일(사순절 시작)','예배'],['03-21','종려주일','예배'],['03-26','성금요일 예배','예배'],['03-28','부활주일','예배'],['05-02','어린이주일','행사'],['05-09','어버이주일','행사'],['05-16','성령강림주일','예배'],['07-04','맥추감사주일','예배'],['10-31','종교개혁주일','예배'],['11-21','추수감사주일(11월 셋째 주)','예배'],['11-28','대림절 첫째 주일','예배'],['12-25','성탄절 예배','예배'],['12-31','송구영신예배','예배']];
+ for(const[d,t,c]of L)await S.db.collection('events').add({title:t,date:Y+'-'+d,time:'',cat:c,memo:'기본 절기(수정 가능)',remind:'-1',done:false,doneAt:''})}
+
+// 알림: 페이지가 열려 있는 동안 작동 + 캘린더(.ics) 내보내기로 휴대폰 알림 연동
+const fired=new Set();
+function checkNotify(){
+ const ok=ntState()==='granted';
+ const now=Date.now();
+ S.ev.forEach(e=>{if(e.done||!e.time||e.remind==null||String(e.remind)==='-1'||fired.has(e.id))return;
+  const t=new Date(e.date+'T'+e.time).getTime()-Number(e.remind)*60000;
+  if(now>=t&&now<t+3600000){fired.add(e.id);if(ok){try{new Notification('⛪ '+e.title,{body:e.date+' '+e.time+(e.memo?' · '+e.memo:'')})}catch(x){S.pops.push(e.id);render()}}else{S.pops.push(e.id);render()}}})}
+setInterval(checkNotify,30000);
+function ntState(){return!('Notification'in window)?'none':Notification.permission}
+function ntLabel(){const s=ntState();$('#nt').textContent=s==='granted'?'🔔 알림 켜짐 (테스트)':s==='denied'?'🔕 알림 차단됨 · 다시 켜기':s==='none'?'🔕 알림 미지원':'🔔 알림 켜기'}
+function ntTest(){try{new Notification('⛪ 알림 테스트',{body:'알림이 정상 작동합니다.'})}catch(x){}}
+function ntHelp(msg){const md=$('#md');md.textContent='';
+ md.append(el('h3',{style:'margin:0'},'알림 다시 켜기'),
+  el('p',{style:'color:var(--mu);font-size:13px'},'브라우저는 한 번 차단된 알림을 웹페이지가 다시 묻지 못하게 합니다. 아래 순서로 직접 허용해 주세요.'),
+  el('ol',{style:'padding-left:18px;font-size:14px'},el('li',{},'주소창 왼쪽의 🔒(또는 설정) 아이콘을 누릅니다.'),el('li',{},'「사이트 설정」 → 「알림」을 「허용」으로 바꿉니다.'),el('li',{},'아래 「다시 확인」을 누릅니다.')),
+  el('p',{style:'color:var(--mu);font-size:12px'},'페이지가 작은 프레임 안에서 열려 있으면 허용되지 않을 수 있습니다. 이 경우 공유 링크를 새 탭에서 열어 보세요. 아이폰은 「홈 화면에 추가」한 앱에서만 알림이 지원됩니다. 알림이 막혀 있어도 앱이 열려 있으면 화면 상단에 알림이 표시되고, 캘린더 내보내기를 쓰면 휴대폰 캘린더가 알려 줍니다.'),
+  el('div',{class:'sub',id:'nr',style:'color:#d04a4a'},msg||''));
+ const r=el('div',{class:'row',style:'margin-top:10px;justify-content:flex-end'},el('button',{class:'b',onclick:close},'닫기'),el('button',{class:'b p',onclick:async()=>{if(ntState()==='default'){try{await Notification.requestPermission()}catch(x){}}ntLabel();if(ntState()==='granted'){close();ntTest();checkNotify()}else $('#nr').textContent=ntState()==='denied'?'아직 차단 상태입니다. 사이트 설정에서 허용으로 바꾼 뒤 다시 눌러 주세요.':'알림 상태를 확인하지 못했습니다.'}},'다시 확인'));
+ md.append(r);$('#mo').classList.add('on')}
+$('#nt').onclick=async()=>{const s=ntState();
+ if(s==='none'){ntHelp('이 브라우저는 알림을 지원하지 않습니다.');return}
+ if(s==='granted'){ntTest();return}
+ if(s==='default'){try{await Notification.requestPermission()}catch(x){}ntLabel();checkNotify();if(ntState()==='granted')return}
+ ntHelp()};
+ntLabel();
+const esc=s=>String(s||'').replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');
+function buildIcs(){
+ const L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//2027 Ministry Plan//KO','CALSCALE:GREGORIAN'];
+ S.ev.forEach(e=>{const d=e.date.replace(/-/g,''),r=String(e.remind??'-1');
+  L.push('BEGIN:VEVENT','UID:'+e.id+'@ministry2027','DTSTAMP:20261127T000000Z','SUMMARY:'+esc(e.title),'DESCRIPTION:'+esc((e.cat||'')+(e.memo?' - '+e.memo:'')));
+  if(e.time){const t=e.time.replace(':','')+'00',en=new Date(e.date+'T'+e.time);en.setHours(en.getHours()+1);L.push('DTSTART:'+d+'T'+t,'DTEND:'+ymd(en).replace(/-/g,'')+'T'+p2(en.getHours())+p2(en.getMinutes())+'00')}
+  else{L.push('DTSTART;VALUE=DATE:'+d,'DTEND;VALUE=DATE:'+ymd(addD(pd(e.date),1)).replace(/-/g,''))}
+  if(r!=='-1')L.push('BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+esc(e.title),'TRIGGER:'+(e.time?'-PT'+r+'M':'PT9H'),'END:VALARM');
+  L.push('END:VEVENT')});
+ L.push('END:VCALENDAR');return L.join('\r\n')}
+function icsFallback(txt,err){const md=$('#md');md.textContent='';
+ const ta=el('textarea',{class:'ta',readonly:'readonly'});ta.value=txt;
+ const ms=el('div',{class:'sub',style:'margin-top:6px'});
+ const url=URL.createObjectURL(new Blob([txt],{type:'text/calendar'}));
+ md.append(el('h3',{style:'margin:0'},'캘린더 내보내기'),el('p',{style:'font-size:13px;color:var(--mu)'},'파일 저장이 바로 되지 않아 다른 방법을 드립니다. ① 「복사」 후 메모 앱에 붙여넣어 「2027.ics」로 저장하거나, ② 「파일로 받기」를 눌러 보세요. 받은 .ics 파일을 열면 구글·아이폰 캘린더에 일정과 알림이 들어갑니다.'+(err?' (오류: '+err+')':'')),ta,ms,
+  el('div',{class:'row',style:'margin-top:10px;justify-content:flex-end'},el('button',{class:'b',onclick:close},'닫기'),
+   el('button',{class:'b',onclick:async()=>{try{await navigator.clipboard.writeText(txt);ms.textContent='복사했습니다.'}catch(x){ta.select();try{document.execCommand('copy');ms.textContent='복사했습니다.'}catch(y){ms.textContent='직접 선택해서 복사해 주세요.'}}}},'복사'),
+   el('a',{class:'b p',href:url,download:'목회계획.ics',style:'text-decoration:none'},'파일로 받기')));
+ $('#mo').classList.add('on')}
+$('#ics').onclick=async()=>{
+ if(!S.ev.length){icsFallback('','내보낼 일정이 없습니다.');return}
+ const txt=buildIcs();
+ try{const dl=await claude.use('downloads');if(!dl)throw{code:'unavailable'};await dl.save({filename:'목회계획.ics',data:new Blob([txt],{type:'text/calendar'})});toast('캘린더 파일을 저장했습니다.')}catch(x){icsFallback(txt,(x&&x.code)||'')}};
+
+render();
+(async()=>{
+ let to=setTimeout(()=>{$('#st').textContent='데이터에 아직 연결하지 못했습니다. 잠시 후 다시 확인해 주세요.'},10000);
+ try{
+  const u=await claude.use('user');S.user=u;S.owner=u?((await u.isOwner())??false):false;try{S.uid=u?await u.id():null}catch(x){}
+  const db=await claude.use('db');
+  if(!db){clearTimeout(to);S.load=false;$('#st').textContent='로그인하면 일정을 보고 추가할 수 있습니다.';render();return}
+  S.db=db;
+  db.collection('events').onSnapshot(s=>{clearTimeout(to);S.load=false;S.ev=s.docs.map(d=>({id:d.id,...d.data()}));render();checkNotify();resolveNames()},e=>{clearTimeout(to);S.load=false;$('#st').textContent='불러오기 오류: '+(e&&e.code||'')})
+ }catch(x){clearTimeout(to);S.load=false;render()}
+})();
+</script></body></html>
